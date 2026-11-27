@@ -1,14 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // Replace with your actual portrait image path
-import ownerPhoto from '../assets/akash3.jpeg';
+import ownerPhoto from "../assets/akash3.jpeg";
 
 /**
  * Reusable Scroll-Reveal Wrapper using IntersectionObserver + useEffect
  * Directions supported: 'left' | 'right' | 'up'
  */
-function RevealOnScroll({ children, direction = 'up', delay = 0, className = '' }) {
+function RevealOnScroll({
+  children,
+  direction = "up",
+  delay = 0,
+  className = "",
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -23,8 +28,8 @@ function RevealOnScroll({ children, direction = 'up', delay = 0, className = '' 
       },
       {
         threshold: 0.15, // Triggers when 15% of the element is in view
-        rootMargin: '0px 0px -40px 0px',
-      }
+        rootMargin: "0px 0px -40px 0px",
+      },
     );
 
     const currentRef = ref.current;
@@ -39,13 +44,13 @@ function RevealOnScroll({ children, direction = 'up', delay = 0, className = '' 
 
   const getInitialTransform = () => {
     switch (direction) {
-      case 'left':
-        return '-translate-x-12 opacity-0';
-      case 'right':
-        return 'translate-x-12 opacity-0';
-      case 'up':
+      case "left":
+        return "-translate-x-12 opacity-0";
+      case "right":
+        return "translate-x-12 opacity-0";
+      case "up":
       default:
-        return 'translate-y-10 opacity-0';
+        return "translate-y-10 opacity-0";
     }
   };
 
@@ -54,7 +59,9 @@ function RevealOnScroll({ children, direction = 'up', delay = 0, className = '' 
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`transition-all duration-700 ease-out will-change-transform ${
-        isVisible ? 'translate-x-0 translate-y-0 opacity-100' : getInitialTransform()
+        isVisible
+          ? "translate-x-0 translate-y-0 opacity-100"
+          : getInitialTransform()
       } ${className}`}
     >
       {children}
@@ -66,42 +73,42 @@ function About() {
   const [showMore, setShowMore] = useState(false);
 
   const highlights = [
-    { label: 'Location', value: 'India' },
-    { label: 'Experience', value: '4+ Years' },
-    { label: 'Focus', value: 'React & Modern Web' },
-    { label: 'Availability', value: 'Open to Work' },
+    { label: "Location", value: "India" },
+    { label: "Experience", value: "4+ Years" },
+    { label: "Focus", value: "React & Modern Web" },
+    { label: "Availability", value: "Open to Work" },
   ];
 
   const journey = [
     {
-      year: '2024 — Present',
-      role: 'Independent Full-Stack Developer',
+      year: "2024 — Present",
+      role: "Independent Full-Stack Developer",
       detail:
-        'Designing and shipping responsive web applications, interactive UIs, and scalable front-end architectures.',
+        "Designing and shipping responsive web applications, interactive UIs, and scalable front-end architectures.",
     },
     {
-      year: '2022 — 2024',
-      role: 'Frontend Engineer',
+      year: "2022 — 2024",
+      role: "Frontend Engineer",
       detail:
-        'Built reusable component libraries in React and Tailwind CSS, improving page load speed and accessibility.',
+        "Built reusable component libraries in React and Tailwind CSS, improving page load speed and accessibility.",
     },
     {
-      year: '2021 — 2022',
-      role: 'UI/UX & Web Designer',
+      year: "2021 — 2022",
+      role: "UI/UX & Web Designer",
       detail:
-        'Translated wireframes into clean, mobile-first digital products with a strong emphasis on typography and motion.',
+        "Translated wireframes into clean, mobile-first digital products with a strong emphasis on typography and motion.",
     },
   ];
 
   const techStack = [
-    'React.js',
-    'JavaScript (ES6+)',
-    'Tailwind CSS',
-    'Node.js',
-    'REST APIs',
-    'Git & GitHub',
-    'UI/UX Prototyping',
-    'Responsive Design',
+    "React.js",
+    "JavaScript (ES6+)",
+    "Tailwind CSS",
+    "Node.js",
+    "REST APIs",
+    "Git & GitHub",
+    "UI/UX Prototyping",
+    "Responsive Design",
   ];
 
   return (
@@ -112,8 +119,8 @@ function About() {
           className="pointer-events-none absolute inset-0 opacity-[0.4]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
+              "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
         />
 
@@ -129,7 +136,7 @@ function About() {
                 About Me
               </span>
               <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-[1.1]">
-                Turning complex ideas into{' '}
+                Turning complex ideas into{" "}
                 <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
                   clean digital craft.
                 </span>
@@ -139,7 +146,6 @@ function About() {
 
           {/* Main About Me Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl shadow-slate-900/5">
-            
             {/* Left Portrait Column (5 cols) - Slides in from Left */}
             <div className="lg:col-span-5">
               <RevealOnScroll direction="left" delay={200}>
@@ -153,7 +159,9 @@ function About() {
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
                     <div>
                       <p className="text-sm font-bold">Akash Mahato</p>
-                      <p className="text-xs text-slate-300">Developer &amp; Designer</p>
+                      <p className="text-xs text-slate-300">
+                        Developer &amp; Designer
+                      </p>
                     </div>
                     <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/15 backdrop-blur-md border border-white/20">
                       Portfolio
@@ -172,19 +180,35 @@ function About() {
                     Who I Am
                   </h2>
                   <p className="text-slate-600 text-base leading-relaxed">
-                    Hi, I'm <b>Akash Mahato</b>, a passionate and dedicated Full Stack Developer with a Bachelor's degree in Computer Science and Engineering.
+                    Hi, I'm <b>Akash Mahato</b>, a passionate and dedicated Full
+                    Stack Developer with a Bachelor's degree in Computer Science
+                    and Engineering.
                   </p>
                   <p className="text-slate-600 text-base leading-relaxed">
-                    I enjoy building modern, responsive, and user-friendly web applications that solve real-world problems. My technical interests include frontend development with React.js, JavaScript, HTML5, and Tailwind CSS, along with backend development using Python, Django, REST APIs, and PostgreSQL.
+                    I enjoy building modern, responsive, and user-friendly web
+                    applications that solve real-world problems. My technical
+                    interests include frontend development with React.js,
+                    JavaScript, HTML5, and Tailwind CSS, along with backend
+                    development using Python, Django, REST APIs, and PostgreSQL.
                   </p>
                   <p className="text-slate-600 text-base leading-relaxed">
-                    I love exploring new technologies, learning morden development practices, and transforming creative ideas into functional digital experiences. I focus on writing clean, maintainable code and continuously improving my problem-solving and development skills.
+                    I love exploring new technologies, learning morden
+                    development practices, and transforming creative ideas into
+                    functional digital experiences. I focus on writing clean,
+                    maintainable code and continuously improving my
+                    problem-solving and development skills.
                   </p>
                   <p className="text-slate-600 text-base leading-relaxed">
-                    As an enthusiastic developer at the beginning of my professional journey, I'm looking forward to contributing to innovative projects, collaborating with talented teams, and growing as a software developer.
+                    As an enthusiastic developer at the beginning of my
+                    professional journey, I'm looking forward to contributing to
+                    innovative projects, collaborating with talented teams, and
+                    growing as a software developer.
                   </p>
                   <p className="text-slate-600 text-base leading-relaxed">
-                    <b>My goal is to build meaningful digital solutions through technology, creativity, and continuous learning.</b>
+                    <b>
+                      My goal is to build meaningful digital solutions through
+                      technology, creativity, and continuous learning.
+                    </b>
                   </p>
                 </div>
               </RevealOnScroll>
@@ -201,7 +225,9 @@ function About() {
                       <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                         {item.label}
                       </p>
-                      <p className="text-sm font-bold text-slate-900 mt-0.5">{item.value}</p>
+                      <p className="text-sm font-bold text-slate-900 mt-0.5">
+                        {item.value}
+                      </p>
                     </div>
                   </RevealOnScroll>
                 ))}
@@ -216,10 +242,10 @@ function About() {
                     aria-expanded={showMore}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 shadow-md shadow-red-600/20 active:scale-95 transition-all duration-200 cursor-pointer"
                   >
-                    <span>{showMore ? 'Show Less' : 'More About Me'}</span>
+                    <span>{showMore ? "Show Less" : "More About Me"}</span>
                     <svg
                       className={`w-4 h-4 transition-transform duration-300 ${
-                        showMore ? 'rotate-180' : ''
+                        showMore ? "rotate-180" : ""
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -246,7 +272,9 @@ function About() {
               {/* Expandable "More" Content Drawer */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  showMore ? 'max-h-[900px] opacity-100 pt-4' : 'max-h-0 opacity-0'
+                  showMore
+                    ? "max-h-[900px] opacity-100 pt-4"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="pt-6 border-t border-slate-200/80 space-y-6">
@@ -262,14 +290,16 @@ function About() {
                           style={{ transitionDelay: `${index * 100}ms` }}
                           className={`p-4 rounded-2xl bg-slate-50 border border-slate-200/70 transition-all duration-500 ${
                             showMore
-                              ? 'translate-x-0 opacity-100'
+                              ? "translate-x-0 opacity-100"
                               : index % 2 === 0
-                              ? '-translate-x-8 opacity-0'
-                              : 'translate-x-8 opacity-0'
+                                ? "-translate-x-8 opacity-0"
+                                : "translate-x-8 opacity-0"
                           }`}
                         >
                           <div className="flex flex-wrap items-center justify-between gap-2">
-                            <h4 className="text-sm font-bold text-slate-900">{step.role}</h4>
+                            <h4 className="text-sm font-bold text-slate-900">
+                              {step.role}
+                            </h4>
                             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-red-50 text-red-600">
                               {step.year}
                             </span>
@@ -294,8 +324,8 @@ function About() {
                           style={{ transitionDelay: `${index * 60}ms` }}
                           className={`px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white transition-all duration-500 ${
                             showMore
-                              ? 'translate-x-0 opacity-100'
-                              : 'translate-x-6 opacity-0'
+                              ? "translate-x-0 opacity-100"
+                              : "translate-x-6 opacity-0"
                           }`}
                         >
                           {skill}

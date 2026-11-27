@@ -1,133 +1,133 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeProject, setActiveProject] = useState(null);
   const pageRef = useRef(null);
 
-  const categories = ['All', 'Full-Stack', 'Frontend', 'UI/UX'];
+  const categories = ["All", "Full-Stack", "Frontend", "UI/UX"];
 
   const projects = [
     {
       id: 1,
-      title: 'PulseFlow Analytics Dashboard',
-      category: 'Full-Stack',
+      title: "PulseFlow Analytics Dashboard",
+      category: "Full-Stack",
       featured: true,
-      year: '2026',
+      year: "2026",
       summary:
-        'Real-time SaaS analytics workspace with custom chart visualizations, role-based access, and sub-second API filtering.',
+        "Real-time SaaS analytics workspace with custom chart visualizations, role-based access, and sub-second API filtering.",
       highlights: [
-        'Built modular data widgets with React and Tailwind CSS',
-        'Integrated REST APIs with optimistic UI updates',
-        'Dark/light adaptive cards with mobile drawer navigation',
+        "Built modular data widgets with React and Tailwind CSS",
+        "Integrated REST APIs with optimistic UI updates",
+        "Dark/light adaptive cards with mobile drawer navigation",
       ],
-      stack: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+      stack: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
       image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
     {
       id: 2,
-      title: 'CartCraft Modern Storefront',
-      category: 'Frontend',
+      title: "CartCraft Modern Storefront",
+      category: "Frontend",
       featured: false,
-      year: '2026',
+      year: "2026",
       summary:
-        'High-converting e-commerce storefront featuring instant search, slide-over cart state, and smooth product filtering.',
+        "High-converting e-commerce storefront featuring instant search, slide-over cart state, and smooth product filtering.",
       highlights: [
-        'Zero-reload category and price range filtering',
-        'Persistent cart drawer with quantity controls',
-        '98+ Lighthouse performance and accessibility score',
+        "Zero-reload category and price range filtering",
+        "Persistent cart drawer with quantity controls",
+        "98+ Lighthouse performance and accessibility score",
       ],
-      stack: ['React', 'JavaScript', 'Tailwind CSS', 'Stripe UI'],
+      stack: ["React", "JavaScript", "Tailwind CSS", "Stripe UI"],
       image:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
     {
       id: 3,
-      title: 'TaskGrid Team Workspace',
-      category: 'Full-Stack',
+      title: "TaskGrid Team Workspace",
+      category: "Full-Stack",
       featured: false,
-      year: '2025',
+      year: "2025",
       summary:
-        'Collaborative Kanban and sprint planning board engineered for distributed engineering teams.',
+        "Collaborative Kanban and sprint planning board engineered for distributed engineering teams.",
       highlights: [
-        'Drag-and-drop task columns with status badges',
-        'Real-time activity feed and priority filtering',
-        'JWT authentication and protected workspace routes',
+        "Drag-and-drop task columns with status badges",
+        "Real-time activity feed and priority filtering",
+        "JWT authentication and protected workspace routes",
       ],
-      stack: ['React', 'Express', 'PostgreSQL', 'Tailwind CSS'],
+      stack: ["React", "Express", "PostgreSQL", "Tailwind CSS"],
       image:
-        'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
     {
       id: 4,
-      title: 'Aura Glass Design System',
-      category: 'UI/UX',
+      title: "Aura Glass Design System",
+      category: "UI/UX",
       featured: false,
-      year: '2025',
+      year: "2025",
       summary:
-        'A cohesive UI component kit built around frosted glass surfaces, crisp typography scales, and accessible color tokens.',
+        "A cohesive UI component kit built around frosted glass surfaces, crisp typography scales, and accessible color tokens.",
       highlights: [
-        '30+ reusable React & Tailwind primitives',
-        'Documented spacing, elevation, and motion guidelines',
-        'Figma tokens synced directly with Tailwind config',
+        "30+ reusable React & Tailwind primitives",
+        "Documented spacing, elevation, and motion guidelines",
+        "Figma tokens synced directly with Tailwind config",
       ],
-      stack: ['Figma', 'Tailwind CSS', 'React', 'Storybook'],
+      stack: ["Figma", "Tailwind CSS", "React", "Storybook"],
       image:
-        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
     {
       id: 5,
-      title: 'DevPulse API Monitor',
-      category: 'Frontend',
+      title: "DevPulse API Monitor",
+      category: "Frontend",
       featured: false,
-      year: '2025',
+      year: "2025",
       summary:
-        'Lightweight uptime and latency status monitor with automated incident timelines and webhook alert previews.',
+        "Lightweight uptime and latency status monitor with automated incident timelines and webhook alert previews.",
       highlights: [
-        'Live 90-day uptime bar visualization',
-        'Instant endpoint status filtering and search',
-        'Responsive layout tailored for desktop and mobile',
+        "Live 90-day uptime bar visualization",
+        "Instant endpoint status filtering and search",
+        "Responsive layout tailored for desktop and mobile",
       ],
-      stack: ['React', 'REST API', 'Tailwind CSS', 'Vite'],
+      stack: ["React", "REST API", "Tailwind CSS", "Vite"],
       image:
-        'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
     {
       id: 6,
-      title: 'NomadStay Booking Experience',
-      category: 'UI/UX',
+      title: "NomadStay Booking Experience",
+      category: "UI/UX",
       featured: false,
-      year: '2024',
+      year: "2024",
       summary:
-        'Editorial travel and boutique stay discovery interface combining split-screen map browsing with fast date selection.',
+        "Editorial travel and boutique stay discovery interface combining split-screen map browsing with fast date selection.",
       highlights: [
-        'Interactive split-view property cards',
-        'Mobile-first bottom sheet filters',
-        'Micro-interactions for saved wishlists',
+        "Interactive split-view property cards",
+        "Mobile-first bottom sheet filters",
+        "Micro-interactions for saved wishlists",
       ],
-      stack: ['UI/UX', 'React', 'Tailwind CSS', 'Mapbox'],
+      stack: ["UI/UX", "React", "Tailwind CSS", "Mapbox"],
       image:
-        'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80',
-      liveUrl: '#',
-      repoUrl: '#',
+        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80",
+      liveUrl: "#",
+      repoUrl: "#",
     },
   ];
 
   const featuredProject = projects.find((p) => p.featured);
   const filteredProjects =
-    selectedCategory === 'All'
+    selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
@@ -136,7 +136,7 @@ function Projects() {
     const root = pageRef.current;
     if (!root) return;
 
-    const elements = root.querySelectorAll('[data-scroll-side]');
+    const elements = root.querySelectorAll("[data-scroll-side]");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -144,19 +144,19 @@ function Projects() {
           if (entry.isIntersecting) {
             const el = entry.target;
             el.classList.remove(
-              'opacity-0',
-              '-translate-x-12',
-              'translate-x-12'
+              "opacity-0",
+              "-translate-x-12",
+              "translate-x-12",
             );
-            el.classList.add('opacity-100', 'translate-x-0');
+            el.classList.add("opacity-100", "translate-x-0");
             observer.unobserve(el);
           }
         });
       },
       {
         threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px',
-      }
+        rootMargin: "0px 0px -40px 0px",
+      },
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -168,10 +168,10 @@ function Projects() {
   useEffect(() => {
     if (!activeProject) return;
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setActiveProject(null);
+      if (e.key === "Escape") setActiveProject(null);
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeProject]);
 
   return (
@@ -185,8 +185,8 @@ function Projects() {
           className="pointer-events-none absolute inset-0 opacity-[0.4]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
+              "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
         />
 
@@ -203,16 +203,17 @@ function Projects() {
             >
               <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-50 text-red-600 border border-red-100 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-red-600" />
-                Selected Work
+                My Work
               </span>
               <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-[1.1]">
-                Featured{' '}
+                Featured{" "}
                 <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
                   Projects
                 </span>
               </h1>
               <p className="mt-3 text-slate-600 text-base sm:text-lg">
-                A curated collection of web applications, interfaces, and full-stack builds crafted with precision.
+                A curated collection of web applications, interfaces, and
+                full-stack builds crafted with precision.
               </p>
             </div>
 
@@ -228,8 +229,8 @@ function Projects() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                     selectedCategory === category
-                      ? 'bg-slate-950 text-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-950 hover:bg-slate-100'
+                      ? "bg-slate-950 text-white shadow-sm"
+                      : "text-slate-600 hover:text-slate-950 hover:bg-slate-100"
                   }`}
                 >
                   {category}
@@ -239,7 +240,7 @@ function Projects() {
           </div>
 
           {/* Spotlight Featured Banner — Slides in from LEFT */}
-          {selectedCategory === 'All' && featuredProject && (
+          {selectedCategory === "All" && featuredProject && (
             <div
               data-scroll-side="left"
               className="mb-12 rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 opacity-0 -translate-x-12 transition-all duration-700 ease-out"
@@ -309,10 +310,10 @@ function Projects() {
               return (
                 <article
                   key={`${selectedCategory}-${project.id}`}
-                  data-scroll-side={fromLeft ? 'left' : 'right'}
+                  data-scroll-side={fromLeft ? "left" : "right"}
                   style={{ transitionDelay: `${(index % 3) * 120}ms` }}
                   className={`group rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-700 ease-out overflow-hidden flex flex-col justify-between opacity-0 ${
-                    fromLeft ? '-translate-x-12' : 'translate-x-12'
+                    fromLeft ? "-translate-x-12" : "translate-x-12"
                   }`}
                 >
                   <div>
@@ -403,7 +404,8 @@ function Projects() {
                 Want to build something similar?
               </h2>
               <p className="text-sm sm:text-base text-slate-600 mt-1">
-                I&apos;m open to freelance projects, product collaborations, and full-time opportunities.
+                I&apos;m open to freelance projects, product collaborations, and
+                full-time opportunities.
               </p>
             </div>
             <a

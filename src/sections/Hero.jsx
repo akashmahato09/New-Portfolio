@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // Replace with your actual portrait image path
-import ownerPhoto from '../assets/akash.png';
+import ownerPhoto from "../assets/akash.png";
 
 function Hero() {
-  const roles = ['Full-Stack Python Developer', 'UI/UX Design', 'Data Analysis'];
+  const roles = [
+    "Full-Stack Python Developer",
+    "UI/UX Design",
+    "Data Analysis",
+  ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,7 +33,7 @@ function Hero() {
       {/* Subtle Architectural Graph Grid - Slides down from top */}
       <div
         className={`pointer-events-none absolute inset-x-0 top-0 overflow-hidden leading-none transition-all duration-1000 ease-out ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
         }`}
       >
         <svg
@@ -51,33 +55,33 @@ function Hero() {
       {/* Soft Radial Gradient Glow */}
       <div
         className={`pointer-events-none absolute -top-24 right-0 w-[34rem] h-[34rem] bg-gradient-to-bl from-red-500/15 via-rose-500/5 to-transparent rounded-full blur-3xl transition-opacity duration-1000 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
+          isVisible ? "opacity-100" : "opacity-0"
         }`}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
           {/* Left Column: Staggered Slide-in from Left (7 cols) */}
           <div className="lg:col-span-7 space-y-6 text-left">
-
             {/* 1. Bold Asymmetric Headline */}
             <div
               className={`space-y-2 transition-all duration-700 ease-out delay-100 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
               }`}
             >
               <p className="text-sm sm:text-base font-semibold tracking-widest uppercase text-red-600">
                 Hello, I&apos;m AKASH MAHATO
               </p>
               <h1 className="text-4xl sm:text-6xl lg:text-[4.25rem] font-black tracking-tight text-slate-950 leading-[1.05]">
-                Designing{' '}
+                Designing{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
                     digital
                   </span>
                   <span className="absolute bottom-1.5 left-0 w-full h-3 bg-red-100 -z-0 rounded-sm" />
-                </span>{' '}
+                </span>{" "}
                 products with soul &amp; precision.
               </h1>
             </div>
@@ -85,7 +89,9 @@ function Hero() {
             {/* 2. Dynamic Role Switcher Line */}
             <div
               className={`flex items-center gap-3 text-base sm:text-lg font-medium text-slate-600 transition-all duration-700 ease-out delay-200 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
               }`}
             >
               <span className="w-8 h-[2px] bg-slate-900" />
@@ -101,38 +107,43 @@ function Hero() {
             {/* 3. Concise Bio */}
             <p
               className={`text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed transition-all duration-700 ease-out delay-300 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
               }`}
             >
-              I blend clean engineering with expressive visual design to turn complex ideas into effortless, memorable web experiences.
+              I blend clean engineering with expressive visual design to turn
+              complex ideas into effortless, memorable web experiences.
             </p>
 
             {/* 4. Clean Action Row */}
             <div
               className={`pt-2 flex flex-wrap items-center gap-4 transition-all duration-700 ease-out delay-[400ms] ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
               }`}
             >
-<a
-  href="#contact"
-  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-slate-950 hover:bg-red-600 shadow-lg shadow-slate-950/15 hover:shadow-red-600/25 active:scale-95 transition-all duration-200"
->
-  <span>Let's Collaborate</span>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-slate-950 hover:bg-red-600 shadow-lg shadow-slate-950/15 hover:shadow-red-600/25 active:scale-95 transition-all duration-200"
+              >
+                <span>Let's Collaborate</span>
 
-  <svg
-    className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M17 8l4 4m0 0l-4 4m4-4H3"
-    />
-  </svg>
-</a>
+                <svg
+                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
 
               <a
                 href="#projects"
@@ -145,7 +156,9 @@ function Hero() {
             {/* 5. Minimal Signature / Social Proof Strip */}
             <div
               className={`pt-6 flex items-center gap-8 border-t border-slate-200/70 max-w-md transition-all duration-700 ease-out delay-500 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
               }`}
             >
               <div>
@@ -155,12 +168,16 @@ function Hero() {
               <div className="h-8 w-[1px] bg-slate-200" />
               <div>
                 <p className="text-xl font-extrabold text-slate-950">30+</p>
-                <p className="text-xs text-slate-500 font-medium">Shipped Projects</p>
+                <p className="text-xs text-slate-500 font-medium">
+                  Shipped Projects
+                </p>
               </div>
               <div className="h-8 w-[1px] bg-slate-200" />
               <div>
                 <p className="text-xl font-extrabold text-slate-950">100%</p>
-                <p className="text-xs text-slate-500 font-medium">Client Satisfaction</p>
+                <p className="text-xs text-slate-500 font-medium">
+                  Client Satisfaction
+                </p>
               </div>
             </div>
           </div>
@@ -168,7 +185,9 @@ function Hero() {
           {/* Right Column: Slide-in from Right (5 cols) */}
           <div
             className={`lg:col-span-5 flex justify-center lg:justify-end transition-all duration-1000 ease-out delay-200 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-20"
             }`}
           >
             <div className="relative w-full max-w-sm sm:max-w-md">
@@ -190,12 +209,18 @@ function Hero() {
                 {/* Floating Glass Badge Inside Bottom of Photo - Slides up slightly after photo enters */}
                 <div
                   className={`absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-white/85 backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-between transition-all duration-700 ease-out delay-500 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-6"
                   }`}
                 >
                   <div>
-                    <p className="text-xs font-bold text-slate-950">Akash Mahato</p>
-                    <p className="text-[11px] font-medium text-slate-600">Founder &amp; Lead Developer</p>
+                    <p className="text-xs font-bold text-slate-950">
+                      Akash Mahato
+                    </p>
+                    <p className="text-[11px] font-medium text-slate-600">
+                      Founder &amp; Lead Developer
+                    </p>
                   </div>
                   <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-red-600 text-white">
                     2026
@@ -204,7 +229,6 @@ function Hero() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

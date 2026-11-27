@@ -152,7 +152,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} My App. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>All systems operational</span>
